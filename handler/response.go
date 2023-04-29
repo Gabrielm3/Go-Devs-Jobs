@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/Gabrielm3/Go-Devs-Jobs/schemas"
 	"github.com/gin-gonic/gin"
+
+	"github.com/Gabrielm3/Go-Devs-Jobs/schemas"
 )
 
 func sendError(ctx *gin.Context, code int, msg string) {
@@ -30,6 +31,11 @@ type ErrorResponse struct {
 }
 
 type CreateOpeningResponse struct {
+	Message string                  `json:"message"`
+	Data    schemas.OpeningResponse `json:"data"`
+}
+
+type DeleteOpeningResponse struct {
 	Message string                  `json:"message"`
 	Data    schemas.OpeningResponse `json:"data"`
 }
